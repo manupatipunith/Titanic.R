@@ -51,39 +51,10 @@ TitanicM<-TitanicF %>%
 #trnsmutate
 TitanicMt<-TitanicF %>% 
   transmute(Surv=ifelse(Surv.new=="Yes", "Survived","NOP"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#---summarise---
+TitanicSU<-Titanics %>%
+  group_by(Pclass) %>% 
+  summarise(Survived=mean(Survived, na.rm = TRUE))
 
 
 
